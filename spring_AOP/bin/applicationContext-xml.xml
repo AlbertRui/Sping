@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd">
+
+	<!-- 配置bean -->
+	<bean id="arithmeticCalculator" class="me.spring.aop.xml.ArithmeticCalculatorImpl"></bean>
+	
+	<!-- 配置切面的bean -->
+	<bean id="loggingAspect" class="me.spring.aop.xml.LoggingAspect"></bean>
+	<bean id="validationAspect" class="me.spring.aop.xml.ValidationAspect"></bean>
+	
+	<!-- 配置aop -->
+	<aop:config>
+		<!-- 配置切点表达式 -->
+		<aop:pointcut expression="execution(* me.spring.aop.xml.ArithmeticCalculator.*(..))" id="pointCut"/>
+		<!-- 配置切面及通知 -->
+		<aop:aspect ref="loggingAspect" order="2">
+			<!--  
+			<aop:around method="aroundMethod" pointcut-ref="pointCut"/>
+			-->
+			<aop:before method="beforeMethod" pointcut-ref="pointCut"/>
+			<aop:after method="afterMethod" pointcut-ref="pointCut"/>
+			<aop:after-throwing method="afterThrowing" pointcut-ref="pointCut" throwing="exception"/>
+			<aop:after-returning method="arterReturning" pointcut-ref="pointCut" returning="result"/>
+		</aop:aspect>
+		<aop:aspect ref="validationAspect" order="1">
+			<aop:before method="validateArgs" pointcut-ref="pointCut"/>
+		</aop:aspect>
+	</aop:config>
+</beans>
