@@ -45,7 +45,7 @@ Thumbs.db
 .classpath
 .metadata
 .obj
-
+.springBeans
 # IDEA project file #
 #####################
 .idea
