@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project>
+  <container path="com.genuitec.runtime.library/com.genuitec.spring_4.1">
+    <jar-attrs id="data/4.1.0/deps/aspectjweaver-1.8.2.jar">
+      <attribute name="source-path" value="E:\Installation package\jar\aspectj\aspectjweaver1.8.2-src.jar"/>
+      <attribute name="source-path-root"/>
+      <attribute name="javadoc_location"/>
+    </jar-attrs>
+  </container>
+</project>
