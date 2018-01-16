@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- 
+		抽象bean：bean的abstract属性值为true，这样的bean不能被IOC容器实例化，只能用来被继承 
+		若一个bean的class属性没有被指定，则该bean必须是一个抽象bean
+	-->
+	<bean id="address" p:city="BeiJing" p:street="WuDaoKou" abstract="true"></bean>
+	
+	<!-- bean配置的继承，使用bean的parent属性指定哪个bean被继承 -->
+	<bean id="address2" class="me.spring.beans.autowire.Address"
+	parent="address"></bean>
+	
+	<bean id="car" class="me.spring.beans.autowire.Car"
+	p:brand="Audi" p:price="3000000"></bean>
+	
+	<!-- 
+		要求在配置bean时必须有一个关联的car，即person这个bean依赖于car这个bean
+		此时如果没有car这个bean，则报错 
+	-->
+	<bean id="person" class="me.spring.beans.autowire.Person"
+	p:name="Tom" p:address-ref="address2" depends-on="car"></bean>
+
+</beans>

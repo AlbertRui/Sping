@@ -1,0 +1,15 @@
+CREATE TABLE `book` (
+  `isbn` varchar(20) DEFAULT NULL,
+  `book_name` varchar(20) DEFAULT NULL,
+  `price` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `book_stock` (
+  `isbn` varchar(20) DEFAULT NULL,
+  `stock` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `account` (
+  `username` varchar(20) DEFAULT NULL,
+  `balance` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
