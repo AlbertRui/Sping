@@ -4,27 +4,8 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Spring框架入门之Spring简介 - AlbertRui - 博客园</title>
-<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=ON3Mxdo4-HlSMqbNDBZXhFIcGLon3eZDvU8zBESgwkk1"/>
-<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/BOOK/bundle-BOOK.css?v=qzznqq7AzRkoka6GRibxinoTgveiXem5TPZDQ_eQWN41"/>
-<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/BOOK/bundle-BOOK-mobile.css?v=2kvKmvRY2V7A8icv7UeoLCg33YxjDCYf0xhrzgD2C1k1"/>
-<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/albertrui/rss"/>
-<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/albertrui/rsd.xml"/>
-<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/albertrui/wlwmanifest.xml"/>
-<script src="//common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
-<script type="text/javascript">var currentBlogApp = 'albertrui', cb_enable_mathjax=false;var isLogined=true;</script>
-<script src="/bundles/blog-common.js?v=O-NTEmnhjbG7lSYLc3yeqkrVxfMJyY9iXf4xyjlKikw1" type="text/javascript"></script>
 </head>
-<body>
-<a name="top"></a>
-
-<script type="text/javascript">
-	try {
-		if (screen.availWidth > 1200) {
-			document.getElementById("MainCss").href = '/Skins/BOOK/style2.css';
-		}
-	} catch (e) { }
-</script>
+<body>
 
 <div id="header">
 <div id="HeaderTitle">
@@ -138,92 +119,6 @@
 <div class="para"><span style="font-size: 14pt">　　　　6、Spring Web 模块：Web 上下文模块建立在应用程序上下文模块之上，为基于 Web 的应用程序提供了上下文。所以，Spring框架支持与 Jakarta Struts 的集成。Web 模　　块还简化了处理多部分请求以及将请求参数绑定到域对象的工作。</span></div>
 <div class="para"><span style="font-size: 14pt">　　　　7、Spring MVC 框架：MVC框架是一个全功能的构建 Web应用程序的 MVC 实现。通过策略接口，MVC框架变成为高度可配置的，MVC 容纳了大量视图技术，其中包括 　　　JSP、Velocity、Tiles、iText 和 POI。模型由javabean构成，存放于Map；视图是一个接口，负责显示模型；控制器表示逻辑代码，是Controller的实现。Spring框架的功能可以　　用在任何J2EE服务器中，大多数功能也适用于不受管理的环境。Spring 的核心要点是：支持不绑定到特定 J2EE服务的可重用业务和数据访问对象。毫无疑问，这样的对象可以　　在不同J2EE 环境（Web 或EJB）、独立应用程序、测试环境之间重用。</span></div>
 <div class="para">&nbsp;</div>
-<div class="para"><span style="font-size: 14pt">参考：https://baike.baidu.com/item/spring/85061?fr=aladdin</span></div>
-
-
-
-
-</div>
-
-
-
-
-</div>
-
-
-
-
-</div>
-
-
-
-
-</div>
-
-
-
-
-</div>
-
-
-
-
-</div>
-
-
-
-
-</div>
-
-
-
-
-</div></div><div id="MySignature"></div>
-<div class="clear"></div>
-<div id="blog_post_info_block">
-<div id="BlogPostCategory"></div>
-<div id="EntryTag"></div>
-<div id="blog_post_info">
-</div>
-<div class="clear"></div>
-<div id="post_next_prev"></div>
-</div>
-
-
-		<p class="postfoot">
-			posted on <span id="post-date">2018-01-12 14:40</span> <a href='http://www.cnblogs.com/albertrui/'>AlbertRui</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=8275678" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(8275678);return false;">收藏</a>
-		</p>
-	</div>
-	<script type="text/javascript">var allowComments=true,cb_blogId=391630,cb_entryId=8275678,cb_blogApp=currentBlogApp,cb_blogUserGuid='55939cf9-b677-4c86-4ffc-08d4ef52ecb6',cb_entryCreatedDate='2018/1/12 14:40:00';loadViewCount(cb_entryId);var cb_postType=1;</script>
-	
-	</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
-<div id='comment_form' class='commentform'>
-<a name='commentform'></a>
-<div id='divCommentShow'></div>
-<div id='comment_nav'><span id='span_refresh_tips'></span><a href='javascript:void(0);' onclick='return RefreshCommentList();' id='lnk_RefreshComments' runat='server' clientidmode='Static'>刷新评论</a><a href='#' onclick='return RefreshPage();'>刷新页面</a><a href='#top'>返回顶部</a></div>
-<div id='comment_form_container'></div>
-<div class='ad_text_commentbox' id='ad_text_under_commentbox'></div>
-<div id='ad_t2'></div>
-<div id='opt_under_post'></div>
-<div id='cnblogs_c1' class='c_ad_block'></div>
-<div id='under_post_news'></div>
-<div id='cnblogs_c2' class='c_ad_block'></div>
-<div id='under_post_kb'></div>
-<div id='HistoryToday' class='c_ad_block'></div>
-<script type='text/javascript'>
-    fixPostBody();
-    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
-    deliverAdT2();
-    deliverAdC1();
-    deliverAdC2();    
-    loadNewsAndKb();
-    loadBlogSignature();
-    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
-    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
-    loadOptUnderPost();
-    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
-</script>
-</div>
 
 </body>
 </html>
