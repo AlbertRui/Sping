@@ -2,6 +2,11 @@ package me.spring.aop.impl;
 
 import org.springframework.stereotype.Component;
 
+/**
+ * 加减乘除计算的具体实现
+ * @author Administrator
+ *
+ */
 @Component
 public class ArithmeticCalculatorImpl implements ArithmeticCalculator {
 

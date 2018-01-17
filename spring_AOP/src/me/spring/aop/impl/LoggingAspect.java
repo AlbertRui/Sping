@@ -30,28 +30,28 @@ public class LoggingAspect {
 	 * 且环绕通知必须有返回值，返回值为目标方法的返回值
 	 * @param pjd
 	 */
-//	@Around("execution(* me.spring.aop.impl.ArithmeticCalculator.*(int, int))")
-//	public Object aroundMethod(ProceedingJoinPoint pjd) {
-//		Object result = null;
-//		
-//		String methodName = pjd.getSignature().getName();
-//		//执行目标方法
-//		try {
-//			//前置通知
-//			System.out.println("The method " + methodName + " begins with " + Arrays.asList(pjd.getArgs()));
-//			result = pjd.proceed();
-//			//返回通知
-//			System.out.println("The method " + methodName + " ends with " + result);
-//		} catch (Throwable e) {
-//			//异常通知
-//			System.out.println("The method " + methodName + " occurs exception: " + e);
-//			throw new RuntimeException(e);
-//		}
-//		//后置通知
-//		System.out.println("The method " + methodName + " ends");
-//		return result;
-//	}
-//	
+	@Around("execution(* me.spring.aop.impl.ArithmeticCalculator.*(int, int))")
+	public Object aroundMethod(ProceedingJoinPoint pjd) {
+		Object result = null;
+		
+		String methodName = pjd.getSignature().getName();
+		//执行目标方法
+		try {
+			//前置通知
+			System.out.println("The method " + methodName + " begins with " + Arrays.asList(pjd.getArgs()));
+			result = pjd.proceed();
+			//返回通知
+			System.out.println("The method " + methodName + " ends with " + result);
+		} catch (Throwable e) {
+			//异常通知
+			System.out.println("The method " + methodName + " occurs exception: " + e);
+			throw new RuntimeException(e);
+		}
+		//后置通知
+		System.out.println("The method " + methodName + " ends");
+		return result;
+	}
+	
 	/**
 	 * 声明切入点表达式，一般的，该方法中不需要加入其他代码
 	 * 使用PointCut声明切入点表达式

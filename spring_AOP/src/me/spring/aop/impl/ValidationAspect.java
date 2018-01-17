@@ -18,6 +18,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class ValidationAspect {
 
+	/**
+	 * 验证切面测试方法
+	 * @param joinPoint
+	 */
 	@Before("execution(public int me.spring.aop.impl.ArithmeticCalculator.*(..) )")
 	public void validateArgs(JoinPoint joinPoint) {
 		System.out.println("validate:" + Arrays.asList(joinPoint.getArgs()));

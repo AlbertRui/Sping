@@ -18,12 +18,19 @@ public class ArithmeticCalculatorLoggingProxy {
 	public ArithmeticCalculatorLoggingProxy(ArithmeticCalculator target) {
 		this.target = target;
 	}
+	
+	/**
+	 * 获取日志代理
+	 * @return
+	 */
 	public ArithmeticCalculator getLoggingProxy() {
+		
 		ArithmeticCalculator proxy = null;
 		
 		//代理对象由哪个类加载器负责加载
 		ClassLoader loader = target.getClass().getClassLoader();
 		//代理对象的类型，即其中有哪些方法
+		@SuppressWarnings("rawtypes")
 		Class[] interfaces = new Class[] {ArithmeticCalculator.class};
 		//当调用代理对象其中的方法是该执行的代码
 		InvocationHandler h = new InvocationHandler() {
@@ -56,6 +63,7 @@ public class ArithmeticCalculatorLoggingProxy {
 				return result;
 			}
 		};
+		
 		proxy = (ArithmeticCalculator) Proxy.newProxyInstance(loader, interfaces, h);
 		return proxy;
 		

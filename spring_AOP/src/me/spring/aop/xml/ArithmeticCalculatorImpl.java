@@ -1,7 +1,10 @@
 package me.spring.aop.xml;
 
-import org.springframework.stereotype.Component;
-
+/**
+ * 加减乘除计算的具体实现
+ * @author Administrator
+ *
+ */
 public class ArithmeticCalculatorImpl implements ArithmeticCalculator {
 
 	@Override
