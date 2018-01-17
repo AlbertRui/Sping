@@ -7,7 +7,7 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 
 /**
- * xmlÎÄ¼şÅäÖÃaop²âÊÔÀà
+ * xmlæ–‡ä»¶é…ç½®aopæµ‹è¯•ç±»
  * @author Administrator
  *
  */
@@ -17,19 +17,19 @@ public class LoggingAspect {
 		Object result = null;
 		
 		String methodName = pjd.getSignature().getName();
-		//Ö´ĞĞÄ¿±ê·½·¨
+		//æ‰§è¡Œç›®æ ‡æ–¹æ³•
 		try {
-			//Ç°ÖÃÍ¨Öª
+			//å‰ç½®é€šçŸ¥
 			System.out.println("The method " + methodName + " begins with " + Arrays.asList(pjd.getArgs()));
 			result = pjd.proceed();
-			//·µ»ØÍ¨Öª
+			//è¿”å›é€šçŸ¥
 			System.out.println("The method " + methodName + " ends with " + result);
 		} catch (Throwable e) {
-			//Òì³£Í¨Öª
+			//å¼‚å¸¸é€šçŸ¥
 			System.out.println("The method " + methodName + " occurs exception: " + e);
 			throw new RuntimeException(e);
 		}
-		//ºóÖÃÍ¨Öª
+		//åç½®é€šçŸ¥
 		System.out.println("The method " + methodName + " ends");
 		return result;
 	}

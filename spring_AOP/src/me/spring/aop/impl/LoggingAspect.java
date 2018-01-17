@@ -15,8 +15,8 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
 /**
- * °ÑÕâ¸öÀàÉùÃ÷ÎªÒ»¸öÇĞÃæ
- * ÏÈ°Ñ¸ÃÀà·ÅÈëIOCÈİÆ÷ÖĞ£¬ÔÙÉùÃ÷ÎªÒ»¸öÇĞÃæ
+ * æŠŠè¿™ä¸ªç±»å£°æ˜ä¸ºä¸€ä¸ªåˆ‡é¢
+ * å…ˆæŠŠè¯¥ç±»æ”¾å…¥IOCå®¹å™¨ä¸­ï¼Œå†å£°æ˜ä¸ºä¸€ä¸ªåˆ‡é¢
  * @author Administrator
  *
  */
@@ -25,9 +25,9 @@ import org.springframework.stereotype.Component;
 public class LoggingAspect {
 
 	/**
-	 * »·ÈÆÍ¨ÖªĞèÒªĞ¯´øProceedingJoinPointÀàĞÍµÄ²ÎÊı
-	 * »·ÈÆÍ¨ÖªÀàËÆÓÚ¶¯Ì¬´úÀíµÄÈ«¹ı³Ì£¬ProceedingJoinPointÀàĞÍµÄ²ÎÊı¿ÉÒÔ¾ö¶¨ÊÇ·ñÖ´ĞĞÄ¿±êÀàĞÍµÄ·½·¨
-	 * ÇÒ»·ÈÆÍ¨Öª±ØĞëÓĞ·µ»ØÖµ£¬·µ»ØÖµÎªÄ¿±ê·½·¨µÄ·µ»ØÖµ
+	 * ç¯ç»•é€šçŸ¥éœ€è¦æºå¸¦ProceedingJoinPointç±»å‹çš„å‚æ•°
+	 * ç¯ç»•é€šçŸ¥ç±»ä¼¼äºåŠ¨æ€ä»£ç†çš„å…¨è¿‡ç¨‹ï¼ŒProceedingJoinPointç±»å‹çš„å‚æ•°å¯ä»¥å†³å®šæ˜¯å¦æ‰§è¡Œç›®æ ‡ç±»å‹çš„æ–¹æ³•
+	 * ä¸”ç¯ç»•é€šçŸ¥å¿…é¡»æœ‰è¿”å›å€¼ï¼Œè¿”å›å€¼ä¸ºç›®æ ‡æ–¹æ³•çš„è¿”å›å€¼
 	 * @param pjd
 	 */
 	@Around("execution(* me.spring.aop.impl.ArithmeticCalculator.*(int, int))")
@@ -35,27 +35,27 @@ public class LoggingAspect {
 		Object result = null;
 		
 		String methodName = pjd.getSignature().getName();
-		//Ö´ĞĞÄ¿±ê·½·¨
+		//æ‰§è¡Œç›®æ ‡æ–¹æ³•
 		try {
-			//Ç°ÖÃÍ¨Öª
+			//å‰ç½®é€šçŸ¥
 			System.out.println("The method " + methodName + " begins with " + Arrays.asList(pjd.getArgs()));
 			result = pjd.proceed();
-			//·µ»ØÍ¨Öª
+			//è¿”å›é€šçŸ¥
 			System.out.println("The method " + methodName + " ends with " + result);
 		} catch (Throwable e) {
-			//Òì³£Í¨Öª
+			//å¼‚å¸¸é€šçŸ¥
 			System.out.println("The method " + methodName + " occurs exception: " + e);
 			throw new RuntimeException(e);
 		}
-		//ºóÖÃÍ¨Öª
+		//åç½®é€šçŸ¥
 		System.out.println("The method " + methodName + " ends");
 		return result;
 	}
 	
 	/**
-	 * ÉùÃ÷ÇĞÈëµã±í´ïÊ½£¬Ò»°ãµÄ£¬¸Ã·½·¨ÖĞ²»ĞèÒª¼ÓÈëÆäËû´úÂë
-	 * Ê¹ÓÃPointCutÉùÃ÷ÇĞÈëµã±í´ïÊ½
-	 * ºóÃæµÄÆäËûÍ¨ÖªÖ±½ÓÊ¹ÓÃ·½·¨ÃûÀ´ÒıÓÃÇĞÈëµã±í´ïÊ½
+	 * å£°æ˜åˆ‡å…¥ç‚¹è¡¨è¾¾å¼ï¼Œä¸€èˆ¬çš„ï¼Œè¯¥æ–¹æ³•ä¸­ä¸éœ€è¦åŠ å…¥å…¶ä»–ä»£ç 
+	 * ä½¿ç”¨PointCutå£°æ˜åˆ‡å…¥ç‚¹è¡¨è¾¾å¼
+	 * åé¢çš„å…¶ä»–é€šçŸ¥ç›´æ¥ä½¿ç”¨æ–¹æ³•åæ¥å¼•ç”¨åˆ‡å…¥ç‚¹è¡¨è¾¾å¼
 	 */
 	@Pointcut("execution(* me.spring.aop.impl.ArithmeticCalculator.*(..))")
 	public void declareJoinPointExpression() {
@@ -63,8 +63,8 @@ public class LoggingAspect {
 	}
 	
 	/**
-	 * ÔÚme.spring.aop.impl.ArithmeticCalculator½Ó¿ÚµÄÊµÏÖÀàµÄÃ¿Ò»¸ö	·½·¨Ö´ĞĞÖ®Ç°Ö´ĞĞÒ»¶Î´úÂë
-	 * ÉùÃ÷¸Ã·½·¨ÊÇÒ»¸öÇ°ÖÃÍ¨Öª
+	 * åœ¨me.spring.aop.impl.ArithmeticCalculatoræ¥å£çš„å®ç°ç±»çš„æ¯ä¸€ä¸ª	æ–¹æ³•æ‰§è¡Œä¹‹å‰æ‰§è¡Œä¸€æ®µä»£ç 
+	 * å£°æ˜è¯¥æ–¹æ³•æ˜¯ä¸€ä¸ªå‰ç½®é€šçŸ¥
 	 */
 	@Before("declareJoinPointExpression()")
 	public void beforeMethod(JoinPoint joinPoint) {
@@ -74,8 +74,8 @@ public class LoggingAspect {
 	}
 	
 	/**
-	 * ºóÖÃÍ¨Öª£ºÔÚÄ¿±ê·½·¨Ö´ĞĞºó£¨ÎŞÂÛÊÇ·ñ·¢ÉúÒì³££©Ö´ĞĞµÄÍ¨Öª
-	 * ²»ÄÜ·ÃÎÊÄ¿±ê·½·¨Ö´ĞĞµÄ½á¹û
+	 * åç½®é€šçŸ¥ï¼šåœ¨ç›®æ ‡æ–¹æ³•æ‰§è¡Œåï¼ˆæ— è®ºæ˜¯å¦å‘ç”Ÿå¼‚å¸¸ï¼‰æ‰§è¡Œçš„é€šçŸ¥
+	 * ä¸èƒ½è®¿é—®ç›®æ ‡æ–¹æ³•æ‰§è¡Œçš„ç»“æœ
 	 */
 	@After("execution(* me.spring.aop.impl.ArithmeticCalculator.*(int, int))")
 	public void afterMethod(JoinPoint joinPoint) {
@@ -84,8 +84,8 @@ public class LoggingAspect {
 	}
 	
 	/**
-	 * ÔÚ·½·¨Õı³£½áÊøºóÖ´ĞĞµÄ´úÂë
-	 * ·µ»ØÍ¨ÖªÊÇ¿ÉÒÔ·ÃÎÊµ½·½·¨ÃûµÄ
+	 * åœ¨æ–¹æ³•æ­£å¸¸ç»“æŸåæ‰§è¡Œçš„ä»£ç 
+	 * è¿”å›é€šçŸ¥æ˜¯å¯ä»¥è®¿é—®åˆ°æ–¹æ³•åçš„
 	 * @param joinPoint
 	 */
 	@AfterReturning(value="execution(* me.spring.aop.impl.ArithmeticCalculator.*(int, int))", returning="result")
@@ -95,8 +95,8 @@ public class LoggingAspect {
 	}
 	
 	/**
-	 * ÔÚÄ¿±ê·½·¨³öÏÖÒì³£Ê±Ö´ĞĞµÄ´úÂë
-	 * ¿ÉÒÔ·ÃÎÊµ½Òì³£¶ÔÏó£¬ÇÒ¿ÉÒÔÖ¸¶¨ÔÚ³öÏÖÌØ¶¨Òì³£Ê±ÔÚÖ´ĞĞÍ¨ÖªµÄ´úÂë
+	 * åœ¨ç›®æ ‡æ–¹æ³•å‡ºç°å¼‚å¸¸æ—¶æ‰§è¡Œçš„ä»£ç 
+	 * å¯ä»¥è®¿é—®åˆ°å¼‚å¸¸å¯¹è±¡ï¼Œä¸”å¯ä»¥æŒ‡å®šåœ¨å‡ºç°ç‰¹å®šå¼‚å¸¸æ—¶åœ¨æ‰§è¡Œé€šçŸ¥çš„ä»£ç 
 	 * @param joinPoint
 	 * @param exception
 	 */

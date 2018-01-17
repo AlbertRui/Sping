@@ -3,7 +3,7 @@ package me.spring.aop.impl;
 import org.springframework.stereotype.Component;
 
 /**
- * ¼Ó¼õ³Ë³ı¼ÆËãµÄ¾ßÌåÊµÏÖ
+ * åŠ å‡ä¹˜é™¤è®¡ç®—çš„å…·ä½“å®ç°
  * @author Administrator
  *
  */

@@ -7,7 +7,7 @@ import org.aspectj.lang.JoinPoint;
 public class ValidationAspect {
 
 	/**
-	 * ÑéÖ¤ÇĞÃæ²âÊÔµÄ·½·¨
+	 * éªŒè¯åˆ‡é¢æµ‹è¯•çš„æ–¹æ³•
 	 * @param joinPoint
 	 */
 	public void validateArgs(JoinPoint joinPoint) {

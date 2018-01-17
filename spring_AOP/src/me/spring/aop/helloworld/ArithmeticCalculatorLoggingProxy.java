@@ -6,13 +6,13 @@ import java.lang.reflect.Proxy;
 import java.util.Arrays;
 
 /**
- * ¶¯Ì¬´úÀíÊµÏÖÈÕÖ¾
+ * åŠ¨æ€ä»£ç†å®ç°æ—¥å¿—
  * @author Administrator
  *
  */
 public class ArithmeticCalculatorLoggingProxy {
 
-	//Òª´úÀíµÄ¶ÔÏó
+	//è¦ä»£ç†çš„å¯¹è±¡
 	private ArithmeticCalculator target;
 	
 	public ArithmeticCalculatorLoggingProxy(ArithmeticCalculator target) {
@@ -20,45 +20,45 @@ public class ArithmeticCalculatorLoggingProxy {
 	}
 	
 	/**
-	 * »ñÈ¡ÈÕÖ¾´úÀí
+	 * è·å–æ—¥å¿—ä»£ç†
 	 * @return
 	 */
 	public ArithmeticCalculator getLoggingProxy() {
 		
 		ArithmeticCalculator proxy = null;
 		
-		//´úÀí¶ÔÏóÓÉÄÄ¸öÀà¼ÓÔØÆ÷¸ºÔğ¼ÓÔØ
+		//ä»£ç†å¯¹è±¡ç”±å“ªä¸ªç±»åŠ è½½å™¨è´Ÿè´£åŠ è½½
 		ClassLoader loader = target.getClass().getClassLoader();
-		//´úÀí¶ÔÏóµÄÀàĞÍ£¬¼´ÆäÖĞÓĞÄÄĞ©·½·¨
+		//ä»£ç†å¯¹è±¡çš„ç±»å‹ï¼Œå³å…¶ä¸­æœ‰å“ªäº›æ–¹æ³•
 		@SuppressWarnings("rawtypes")
 		Class[] interfaces = new Class[] {ArithmeticCalculator.class};
-		//µ±µ÷ÓÃ´úÀí¶ÔÏóÆäÖĞµÄ·½·¨ÊÇ¸ÃÖ´ĞĞµÄ´úÂë
+		//å½“è°ƒç”¨ä»£ç†å¯¹è±¡å…¶ä¸­çš„æ–¹æ³•æ˜¯è¯¥æ‰§è¡Œçš„ä»£ç 
 		InvocationHandler h = new InvocationHandler() {
 			
 			/**
-			 * proxy:ÕıÔÚ·µ»ØµÄ´úÀí¶ÔÏó£¬Ò»°ãÇé¿öÏÂ£¬ÔÚinvoke·½·¨ÖĞ¶¼²»Ê¹ÓÃ¸Ã¶ÔÏó
-			 * method:ÕıÔÚ±»µ÷ÓÃµÄ·½·¨
-			 * args:µ÷ÓÃ·½·¨ÊÇ´«ÈëµÄ²ÎÊı
+			 * proxy:æ­£åœ¨è¿”å›çš„ä»£ç†å¯¹è±¡ï¼Œä¸€èˆ¬æƒ…å†µä¸‹ï¼Œåœ¨invokeæ–¹æ³•ä¸­éƒ½ä¸ä½¿ç”¨è¯¥å¯¹è±¡
+			 * method:æ­£åœ¨è¢«è°ƒç”¨çš„æ–¹æ³•
+			 * args:è°ƒç”¨æ–¹æ³•æ˜¯ä¼ å…¥çš„å‚æ•°
 			 */
 			@Override
 			public Object invoke(Object proxy, Method method, Object[] args) {
 				String methodName = method.getName();
-				//ÈÕÖ¾
+				//æ—¥å¿—
 				System.out.println("The method " +  methodName + " begin with " + Arrays.asList(args));
-				//Ö´ĞĞ·½·¨
+				//æ‰§è¡Œæ–¹æ³•
 				Object result = null;
 				
 				try {
-					//Ç°ÖÃÍ¨Öª
+					//å‰ç½®é€šçŸ¥
 					result = method.invoke(target, args);
-					//·µ»ØÍ¨Öª£¬¿ÉÒÔ·ÃÎÊµ½·½·¨µÄ·µ»ØÖµ
+					//è¿”å›é€šçŸ¥ï¼Œå¯ä»¥è®¿é—®åˆ°æ–¹æ³•çš„è¿”å›å€¼
 				} catch (Exception e) {
 					e.printStackTrace();
-					//Òì³£Í¨Öª£¬¿ÉÒÔ·ÃÎÊµ½·½·¨³öÏÖµÄÒì³£
+					//å¼‚å¸¸é€šçŸ¥ï¼Œå¯ä»¥è®¿é—®åˆ°æ–¹æ³•å‡ºç°çš„å¼‚å¸¸
 				}
 				
-				//ÒòÎª·½·¨¿ÉÄÜÅ×	Òì³££¬ËùÒÔ¿ÉÄÜ·ÃÎÊ²»µ½·½·¨µÄ·µ»ØÖµ
-				//ÈÕÖ¾
+				//å› ä¸ºæ–¹æ³•å¯èƒ½æŠ›	å¼‚å¸¸ï¼Œæ‰€ä»¥å¯èƒ½è®¿é—®ä¸åˆ°æ–¹æ³•çš„è¿”å›å€¼
+				//æ—¥å¿—
 				System.out.println("The method " + methodName + " end with " + result);
 				return result;
 			}

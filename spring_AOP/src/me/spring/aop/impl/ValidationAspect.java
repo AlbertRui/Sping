@@ -9,7 +9,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 /**
- * ÑéÖ¤ÇĞÃæ,¿ÉÒÔÊ¹ÓÃ@OrderÖ¸¶¨ÇĞÃæµÄÓÅÏÈ¼¶£¬ÖµÔ½Ğ¡£¬ÓÅÏÈ¼¶Ô½¸ß
+ * éªŒè¯åˆ‡é¢,å¯ä»¥ä½¿ç”¨@OrderæŒ‡å®šåˆ‡é¢çš„ä¼˜å…ˆçº§ï¼Œå€¼è¶Šå°ï¼Œä¼˜å…ˆçº§è¶Šé«˜
  * @author Administrator
  *
  */
@@ -19,7 +19,7 @@ import org.springframework.stereotype.Component;
 public class ValidationAspect {
 
 	/**
-	 * ÑéÖ¤ÇĞÃæ²âÊÔ·½·¨
+	 * éªŒè¯åˆ‡é¢æµ‹è¯•æ–¹æ³•
 	 * @param joinPoint
 	 */
 	@Before("execution(public int me.spring.aop.impl.ArithmeticCalculator.*(..) )")
