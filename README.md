@@ -10,7 +10,7 @@
 <div id="header">
 <div id="HeaderTitle">
 <div id="Title">
-<a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/albertrui/">AlbertRui</a>
+<a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/albertrui/"><h1>AlbertRui<h1></a>
 </div>
 <div id="subTitle"></div>
 </div>
