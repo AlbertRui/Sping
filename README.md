@@ -1,5 +1,4 @@
-
-<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-cn">
 <head>
 <meta charset="utf-8"/>
@@ -14,10 +13,8 @@
 </div>
 <div id="subTitle"></div>
 </div>
-</div>
-
-<div id="main">
-	
+</div>
+<div id="main">
 <div id="post_detail">
 	<div class="post">
 		<h2>
