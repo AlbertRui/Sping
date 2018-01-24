@@ -18,7 +18,7 @@
 <div id="post_detail">
 	<div class="post">
 		<h2>
-			<a id="cb_post_title_url" href="http://www.cnblogs.com/albertrui/p/8275678.html">Spring框架入门之Spring简介</a>
+			<a id="cb_post_title_url" href="http://www.cnblogs.com/albertrui/p/8275678.html">Spring框架学习记录</a>
 		</h2>
 <h2><span style="font-size: 14pt">一、Spring简介（由Rod Johnson创建的一个开源框架）</span></h2>
 <div class="lemma-summary">
